@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasGlobal.EmployeeSalary.Web.ClientApi", "MasGlobal.EmployeeSalary.Web.ClientApi\MasGlobal.EmployeeSalary.Web.ClientApi.csproj", "{C7849185-3F33-4B4D-BB30-F62BEA102EB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasGlobal.EmployeeSalary.Web.MVC", "MasGlobal.EmployeeSalary.Web.MVC\MasGlobal.EmployeeSalary.Web.MVC.csproj", "{3ED48A2F-6809-47A8-82BE-7A857A8A3587}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasGlobal.EmployeeSalary.Contracts", "MasGlobal.EmployeeSalary.Contracts\MasGlobal.EmployeeSalary.Contracts.csproj", "{94D93935-E2E2-4C1C-803E-1FC74AE611BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasGlobal.EmployeeSalary.Core", "MasGlobal.EmployeeSalary.Core\MasGlobal.EmployeeSalary.Core.csproj", "{CA555611-1BCC-426B-BB50-D39DDA81CC01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasGlobal.EmployeeSalary.Infrastructure", "MasGlobal.EmployeeSalary.Infrastructure\MasGlobal.EmployeeSalary.Infrastructure.csproj", "{A8E00F13-E00E-4585-999C-40D20E2F27FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7849185-3F33-4B4D-BB30-F62BEA102EB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7849185-3F33-4B4D-BB30-F62BEA102EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7849185-3F33-4B4D-BB30-F62BEA102EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7849185-3F33-4B4D-BB30-F62BEA102EB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ED48A2F-6809-47A8-82BE-7A857A8A3587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED48A2F-6809-47A8-82BE-7A857A8A3587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED48A2F-6809-47A8-82BE-7A857A8A3587}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED48A2F-6809-47A8-82BE-7A857A8A3587}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94D93935-E2E2-4C1C-803E-1FC74AE611BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94D93935-E2E2-4C1C-803E-1FC74AE611BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94D93935-E2E2-4C1C-803E-1FC74AE611BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94D93935-E2E2-4C1C-803E-1FC74AE611BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA555611-1BCC-426B-BB50-D39DDA81CC01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA555611-1BCC-426B-BB50-D39DDA81CC01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA555611-1BCC-426B-BB50-D39DDA81CC01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA555611-1BCC-426B-BB50-D39DDA81CC01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E00F13-E00E-4585-999C-40D20E2F27FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E00F13-E00E-4585-999C-40D20E2F27FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E00F13-E00E-4585-999C-40D20E2F27FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E00F13-E00E-4585-999C-40D20E2F27FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA09EB05-217F-48A0-936C-67FF163A46D1}
+	EndGlobalSection
+EndGlobal
