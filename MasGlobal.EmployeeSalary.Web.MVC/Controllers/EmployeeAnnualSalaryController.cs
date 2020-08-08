@@ -20,11 +20,11 @@ namespace MasGlobal.EmployeeSalary.Web.MVC.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetEmployeesAnnualSalary(List<int> employeeids)
+        public async Task<IActionResult> GetEmployeesAnnualSalary()
         {
             try
             {
-                var result = EmployeeService.GetEmployeesAnnualSalary(employeeids);
+                var result = EmployeeService.GetEmployeesAnnualSalary();
                 return Ok(result);
             }
             catch (Exception ex)

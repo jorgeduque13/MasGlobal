@@ -38,11 +38,11 @@ namespace MasGlobal.EmployeeSalary.Web.MVC
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            #region Swagger
+            //#region Swagger
 
-            services.AddSwaggerGen();
+            ////services.AddSwaggerGen();
 
-            #endregion
+            //#endregion
 
             #region dependencie Injection
 
@@ -56,20 +56,20 @@ namespace MasGlobal.EmployeeSalary.Web.MVC
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
 
-            #region Swagger
+            //#region Swagger
 
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
+            //// Enable middleware to serve generated Swagger as a JSON endpoint.
+            //app.UseSwagger();
 
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
-            // specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Employee Annual Salary Calculator");
-                c.RoutePrefix = string.Empty;
-            });
+            //// Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            //// specifying the Swagger JSON endpoint.
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Employee Annual Salary Calculator");
+            //    c.RoutePrefix = string.Empty;
+            //});
 
-            #endregion
+            //#endregion
 
             if (env.IsDevelopment())
             {

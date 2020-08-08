@@ -18,15 +18,45 @@ namespace MasGlobal.EmployeeSalary.Core
             EmployeeRepository = employeeRepository;   
         }
 
-        public List<Employee> GetEmployeesAnnualSalary(List<int> employeeids)
+        public List<Employee> GetEmployeesAnnualSalary()
         {            
             var Employees = EmployeeRepository.GetAll().Result;
-            var result = EmployeeFactory(Employees, employeeids);
+            var result = EmployeeFactory(Employees);
             return result;
         }
-        
+
         /// <summary>
-        /// Employee Factory method
+        /// Employee Factory method 
+        /// </summary>
+        /// <param name="lstemployeeDto"></param>
+        /// <returns></returns>
+        private List<Employee> EmployeeFactory(List<EmployeeDto> lstemployeeDto)
+        {
+            List<Employee> lstEmployee = new List<Employee>();
+            Employee employee = new Employee();
+
+            foreach (var item in lstemployeeDto)
+            {
+                employee = new Employee();
+
+                employee.Id = item.Id.ToString();
+                employee.Name = item.Name;
+                employee.ContractTypeName = item.ContractTypeName;
+                employee.RoleId = item.RoleId;
+                employee.RoleName = item.RoleName;
+                employee.RoleDescription = item.RoleDescription;
+                employee.HourlySalary = item.HourlySalary;
+                employee.MonthlySalary = item.MonthlySalary;
+                employee.AnnualSalary = GetAnnualSalary(item.ContractTypeName, item.HourlySalary, item.MonthlySalary);
+
+                lstEmployee.Add(employee);
+            }
+
+            return lstEmployee;
+        }
+
+        /// <summary>
+        /// Employee Factory method overload to retrieve with employee Id
         /// </summary>
         /// <param name="employeeDto"></param>
         /// <returns>List of Employees with annual salary</returns>
@@ -43,7 +73,7 @@ namespace MasGlobal.EmployeeSalary.Core
                     {
                         employee = new Employee();
 
-                        employee.Id = item.Id;
+                        employee.Id = item.Id.ToString();
                         employee.Name = item.Name;
                         employee.ContractTypeName = item.ContractTypeName;
                         employee.RoleId = item.RoleId;

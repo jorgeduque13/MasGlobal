@@ -9,6 +9,6 @@ namespace MasGlobal.EmployeeSalary.Contracts.Interfaces.Core
 {
     public interface IEmployeeService
     {
-        List<Employee> GetEmployeesAnnualSalary(List<int> employeeids);
+        List<Employee> GetEmployeesAnnualSalary();
     }
 }
