@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace MasGlobal.EmployeeSalary.Web.MVC.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class EmployeeAnnualSalaryController : Controller
     {
         private readonly IEmployeeService EmployeeService;

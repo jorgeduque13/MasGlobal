@@ -1,0 +1,30 @@
+<h1>Employee Annual Salary</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!employees"><em>Loading...</em></p>
+
+<table class='table' *ngIf="employees">
+  <thead>
+    <tr>
+      <th>Annual Salary</th>
+      <th>Employee Id</th>
+      <th>Name</th>
+      <th>Contract</th>
+      <th>Role</th>
+      <th>HourlySalary</th>
+      <th>MonthlySalary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let employee of employees'>
+      <td>{{ employee.annualSalary | currency}}</td>
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.contractTypeName }}</td>
+      <td>{{ employee.roleName }}</td>
+      <td>{{ employee.hourlySalary | currency }}</td>
+      <td>{{ employee.monthlySalary | currency }}</td>
+    </tr>
+  </tbody>
+</table>
