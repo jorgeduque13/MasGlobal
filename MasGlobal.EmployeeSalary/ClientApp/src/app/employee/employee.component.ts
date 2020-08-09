@@ -1,5 +1,4 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { IEmployee } from '../interface/i-employee';
 import { EmployeeService } from '../services/employee.service';
 
@@ -8,16 +7,15 @@ import { EmployeeService } from '../services/employee.service';
 })
 export class EmployeeComponent implements OnInit {
 
-  //public forecasts: WeatherForecast[];
-
-  //constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-  //  http.get<WeatherForecast[]>(baseUrl + 'api/SampleData/WeatherForecasts').subscribe(result => {
-  //    this.forecasts = result;
-  //  }, error => console.error(error));
-  //}
+  public clickEvent: boolean = false;
+  public errorMessage: string = '';
   public employees: IEmployee[] = [];
 
   constructor(private employeeService: EmployeeService) {
+  }
+
+  calculateAnnualSalary(): void {
+    this.clickEvent = !this.clickEvent;
   }
 
   //constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
@@ -30,9 +28,7 @@ export class EmployeeComponent implements OnInit {
     this.employees = this.employeeService.getEmployees();
   }
 
-  onSubmit() {
-    this.employees = this.employeeService.getEmployees();    
-  }
+  
 
 }
 
