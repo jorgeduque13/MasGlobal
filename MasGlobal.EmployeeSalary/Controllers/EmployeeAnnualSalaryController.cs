@@ -6,7 +6,7 @@ using MasGlobal.EmployeeSalary.Contracts.Interfaces.Core;
 using MasGlobal.EmployeeSalary.Contracts.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MasGlobal.EmployeeSalary.Web.MVC.Controllers
+namespace MasGlobal.EmployeeSalary.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

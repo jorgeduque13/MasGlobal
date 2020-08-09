@@ -23,8 +23,7 @@ export class EmployeeService {
   //}
 
   getEmployees(): IEmployee[] {
-    return    
-    [{
+    return [{
       "id": "1",
       "name": "Juan",
       "contractTypeName": "HourlySalaryEmployee",
