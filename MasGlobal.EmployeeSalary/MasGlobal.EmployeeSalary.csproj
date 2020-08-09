@@ -25,9 +25,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\interface\i-employee.ts" />
+    <None Remove="ClientApp\src\app\services\employee.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MasGlobal.EmployeeSalary.Contracts\MasGlobal.EmployeeSalary.Contracts.csproj" />
     <ProjectReference Include="..\MasGlobal.EmployeeSalary.Core\MasGlobal.EmployeeSalary.Core.csproj" />
     <ProjectReference Include="..\MasGlobal.EmployeeSalary.Infrastructure\MasGlobal.EmployeeSalary.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\interface\i-employee.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\employee.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
