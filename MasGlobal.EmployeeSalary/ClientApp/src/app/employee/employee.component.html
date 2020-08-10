@@ -4,7 +4,8 @@
     <div class='row'>
       <div class='col-md-2'>Employee Id:</div>
       <div class='col-md-4'>
-        <input type='text'>
+        <input type='text'
+               [(ngModel)]='_employeId'>
       </div>
     </div>
     <div class='row'>
@@ -15,7 +16,7 @@
     </div>
   </div>
   <div class='table-responsive'>
-    <table class='table' *ngIf="clickEvent && employees">
+    <table class='table' *ngIf="employees.length">
       <thead>
         <tr>
           <th>Annual Salary</th>
@@ -27,8 +28,8 @@
           <th>MonthlySalary</th>
         </tr>
       </thead>
-      <tbody *ngIf='clickEvent'>
-        <tr *ngFor='let employee of filteredEmployees'>
+      <tbody *ngIf='employees.length'>
+        <tr *ngFor='let employee of employees'>
           <td>{{ employee.annualSalary | currency:'USD':'symbol':'1.0-0' }}</td>
           <td>{{ employee.id }}</td>
           <td>{{ employee.name }}</td>
@@ -40,12 +41,7 @@
       </tbody>
     </table>
   </div>
-  <p *ngIf="clickEvent && employees"><em>Employees annual salary is calculated depending on the type of contract.</em></p>
-  <div *ngIf="clickEvent && employees" class='row'>
-    <div class='col-md-2'>Filter by Id:</div>
-    <div class='col-md-4'>
-      <input type='text'
-             [(ngModel)]='listFilter'>
-    </div>
-  </div>
+  <p *ngIf="employees.length"><em>Employee annual salary is calculated depending on the type of contract this way:</em></p>
+  <p *ngIf="employees.length"><em>For Hourly Salary Employees the Annual Salary is: 120 * HourlySalary * 12</em></p>
+  <p *ngIf="employees.length"><em>For Monthly Salary Employees the Annual Salary is: MonthtlySalary * 12</em></p>
 </div>

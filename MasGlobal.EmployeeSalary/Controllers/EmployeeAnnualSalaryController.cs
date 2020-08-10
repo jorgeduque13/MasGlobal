@@ -33,5 +33,12 @@ namespace MasGlobal.EmployeeSalary.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetEmployeeById(string id)
+        {
+            var result = EmployeeService.GetEmployeesAnnualSalary().FirstOrDefault(i => i.Id.ToString() == id);            
+            return Ok(result);
+        }
+
     }
 }

@@ -10,36 +10,47 @@ export class EmployeeComponent implements OnInit {
       public clickEvent: boolean = false;
       public errorMessage: string = '';
       public _listFilter = '';
+      public _employeId: string = '';
+
+      get employeId(): string {
+        return this._employeId;
+      }      
+
       get listFilter(): string {
         return this._listFilter;
       }
       set listFilter(value: string) {
-        this._listFilter = value;
-        this.filteredEmployees = this.listFilter ? this.performFilter(this.listFilter) : this.employees;
+        this._listFilter = value;        
       }
-      public filteredEmployees: IEmployee[] = [];
-      public employees: IEmployee[] = [];
+      
+      public employees: IEmployee[] = [];      
 
       constructor(private employeeService: EmployeeService) {
       }
 
-      performFilter(filterBy: string): IEmployee[] {
-        return this.employees.filter((employee: IEmployee) =>
-          employee.id.indexOf(filterBy) !== -1);
-      }
+    calculateAnnualSalary(): void {      
+      this.employees = [];      
 
-      calculateAnnualSalary(): void {
+      if (this._employeId == '') {
+          this.employeeService.getEmployees().subscribe({
+            next: employees => {
+              this.employees = employees;              
+            },
+            error: err => this.errorMessage = err
+          });
+        }
+        else {
+          this.employeeService.getEmployeeById(this._employeId).subscribe({
+            next: employee => {
+              this.employees[0] = employee;              
+            },
+            error: err => this.errorMessage = err
+          });
+        }
         this.clickEvent = !this.clickEvent;
       }
       
       ngOnInit() {
-        this.employeeService.getEmployees().subscribe({
-          next: employees => {
-            this.employees = employees;
-            this.filteredEmployees = this.employees;
-          },
-          error: err => this.errorMessage = err
-        });
       } 
 }
 

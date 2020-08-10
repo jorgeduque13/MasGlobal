@@ -11,15 +11,20 @@ export class EmployeeService {
   API_URL: String;
   httpOptions: any = {};
 
-  private employeeUrl = 'api/EmployeeAnnualSalary';
+  private employeeApiUrl = 'api/EmployeeAnnualSalary';
+  private employeeApiUrlById = 'api/EmployeeAnnualSalary/';
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
 
   }
 
+  getEmployeeById(searchId: string): Observable<IEmployee> {    
+    return this.http.get<IEmployee>(this.baseUrl + this.employeeApiUrlById + searchId).pipe(
+      tap(data => console.log('All: ' + JSON.stringify(data))));    
+  }
+
   getEmployees(): Observable<IEmployee[]> {
-    return this.http.get<IEmployee[]>(this.baseUrl + this.employeeUrl).pipe(
-      tap(data => console.log('All: ' + JSON.stringify(data)))
-    );
-  }  
+    return this.http.get<IEmployee[]>(this.baseUrl + this.employeeApiUrl).pipe(
+      tap(data => console.log('All: ' + JSON.stringify(data))));
+  }
 }
