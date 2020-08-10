@@ -7,29 +7,35 @@ import { EmployeeService } from '../services/employee.service';
 })
 export class EmployeeComponent implements OnInit {
 
-  public clickEvent: boolean = false;
-  public errorMessage: string = '';
-  public employees: IEmployee[] = [];
+      public clickEvent: boolean = false;
+      public errorMessage: string = '';
+      public employees: IEmployee[] = [];
 
-  constructor(private employeeService: EmployeeService) {
-  }
+      constructor(private employeeService: EmployeeService) {
+      }
 
-  calculateAnnualSalary(): void {
-    this.clickEvent = !this.clickEvent;
-  }
+      calculateAnnualSalary(): void {
+        this.clickEvent = !this.clickEvent;
+      }
 
-  //constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-  //  http.get<IEmployee[]>(baseUrl + 'api/EmployeeAnnualSalary/WeatherForecasts').subscribe(result => {
-  //    this.employees = result;
-  //  }, error => console.error(error));
-  //}
+      //constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+      //  http.get<IEmployee[]>(baseUrl + 'api/EmployeeAnnualSalary/WeatherForecasts').subscribe(result => {
+      //    this.employees = result;
+      //  }, error => console.error(error));
+      //}
 
-  ngOnInit() {
-    this.employees = this.employeeService.getEmployees();
-  }
+      //ngOnInit() {
+      //  this.employees = this.employeeService.getEmployees();
+      //}
 
-  
-
+      ngOnInit() {
+        this.employeeService.getEmployees().subscribe({
+          next: employees => {
+            this.employees = employees;
+          },
+          error: err => this.errorMessage = err
+        });
+      } 
 }
 
 

@@ -22,6 +22,9 @@ namespace MasGlobal.EmployeeSalary
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            services.AddRepositories();
+            services.AddServices(Configuration);
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

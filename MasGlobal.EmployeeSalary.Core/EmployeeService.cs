@@ -55,42 +55,7 @@ namespace MasGlobal.EmployeeSalary.Core
             return lstEmployee;
         }
 
-        /// <summary>
-        /// Employee Factory method overload to retrieve with employee Id
-        /// </summary>
-        /// <param name="employeeDto"></param>
-        /// <returns>List of Employees with annual salary</returns>
-        private List<Employee> EmployeeFactory(List<EmployeeDto> lstemployeeDto, List<int> lstids)
-        {
-            List<Employee> lstEmployee = new List<Employee>();            
-            Employee employee = new Employee();
-                      
-            foreach (var item in lstemployeeDto)
-            {
-                foreach (var id in lstids)
-                {
-                    if (item.Id == id)
-                    {
-                        employee = new Employee();
-
-                        employee.Id = item.Id.ToString();
-                        employee.Name = item.Name;
-                        employee.ContractTypeName = item.ContractTypeName;
-                        employee.RoleId = item.RoleId;
-                        employee.RoleName = item.RoleName;
-                        employee.RoleDescription = item.RoleDescription;
-                        employee.HourlySalary = item.HourlySalary;
-                        employee.MonthlySalary = item.MonthlySalary;
-                        employee.AnnualSalary = GetAnnualSalary(item.ContractTypeName, item.HourlySalary, item.MonthlySalary);
-
-                        lstEmployee.Add(employee);
-                    }
-                }                
-            }
-
-            return lstEmployee;
-        }
-
+        
         /// <summary>
         /// /Method to calculate the annual salary according to the contract type.
         /// </summary>
