@@ -21,30 +21,5 @@ export class EmployeeService {
     return this.http.get<IEmployee[]>(this.baseUrl + this.employeeUrl).pipe(
       tap(data => console.log('All: ' + JSON.stringify(data)))
     );
-  }
-
-  //getEmployees(): IEmployee[] {
-  //  return [{
-  //    "id": "1",
-  //    "name": "Juan",
-  //    "contractTypeName": "HourlySalaryEmployee",
-  //    "roleId": 1,
-  //    "roleName": "Administrator",
-  //    "roleDescription": null,
-  //    "hourlySalary": 60000,
-  //    "monthlySalary": 80000,
-  //    "annualSalary": 86400000
-  //  },
-  //  {
-  //    "id": "2",
-  //    "name": "Sebastian",
-  //    "contractTypeName": "MonthlySalaryEmployee",
-  //    "roleId": 2,
-  //    "roleName": "Contractor",
-  //    "roleDescription": null,
-  //    "hourlySalary": 60000,
-  //    "monthlySalary": 80000,
-  //    "annualSalary": 960000
-  //  }];
-  //}
+  }  
 }

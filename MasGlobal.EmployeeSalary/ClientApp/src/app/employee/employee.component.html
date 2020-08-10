@@ -4,7 +4,7 @@
     <div class='row'>
       <div class='col-md-2'>Employee Id:</div>
       <div class='col-md-4'>
-        <input type='text' >
+        <input type='text'>
       </div>
     </div>
     <div class='row'>
@@ -14,9 +14,8 @@
       </button>
     </div>
   </div>
-  <p *ngIf="!employees"><em>Loading...</em></p>
   <div class='table-responsive'>
-    <table class='table' *ngIf="employees">
+    <table class='table' *ngIf="clickEvent && employees">
       <thead>
         <tr>
           <th>Annual Salary</th>
@@ -29,16 +28,24 @@
         </tr>
       </thead>
       <tbody *ngIf='clickEvent'>
-        <tr *ngFor='let employee of employees'>
-          <td>{{ employee.annualSalary }}</td>
+        <tr *ngFor='let employee of filteredEmployees'>
+          <td>{{ employee.annualSalary | currency:'USD':'symbol':'1.0-0' }}</td>
           <td>{{ employee.id }}</td>
           <td>{{ employee.name }}</td>
           <td>{{ employee.contractTypeName }}</td>
           <td>{{ employee.roleName }}</td>
-          <td>{{ employee.hourlySalary }}</td>
-          <td>{{ employee.monthlySalary }}</td>
+          <td>{{ employee.hourlySalary | currency:'USD':'symbol':'1.0-0' }}</td>
+          <td>{{ employee.monthlySalary | currency:'USD':'symbol':'1.0-0' }}</td>
         </tr>
       </tbody>
     </table>
+  </div>
+  <p *ngIf="clickEvent && employees"><em>Employees annual salary is calculated depending on the type of contract.</em></p>
+  <div *ngIf="clickEvent && employees" class='row'>
+    <div class='col-md-2'>Filter by Id:</div>
+    <div class='col-md-4'>
+      <input type='text'
+             [(ngModel)]='listFilter'>
+    </div>
   </div>
 </div>
